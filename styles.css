@@ -3,3 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --toggle-switch-bg: #232428;
+  --toggle-border: #232428;
+  --toggle-bg: #fff;
+}
+
+.toggle-wrap {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
