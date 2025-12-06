@@ -2,6 +2,8 @@
   --toggle-switch-bg: #232428;
   --toggle-border: #232428;
   --toggle-bg: #fff;
+  --circle-size: 40px;
+  --toggle-width: 100px;
 }
 
 .toggle-wrap {
@@ -18,17 +20,18 @@
 
 /* The label is what we are styling to be the outside border of the toggle switch. */
 label {
-  width: 100px;
-  height: 40px;
+  width: var(--toggle-width);
+  height: var(--circle-size);
   border: 3px solid var(--toggle-border);
   border-radius: 40px;
   padding: 0.25em;
+  background-color: var(--toggle-bg);
 }
 
 .toggle-switch {
   /* Height and width are the same so we can make a sqaure, then cut the edges with border-radius to create a circle. */
-  height: 40px;
-  width: 40px;
+  height: var(--circle-size);
+  width: var(--circle-size);
   background-color: var(--toggle-switch-bg);
   border-radius: 50%;
   transition: all 0.5s;
@@ -37,5 +40,5 @@ label {
 /* Use sibling selector to select toggle circle */
 /* The container element (in this case, the <label> is set to  width: 100px. The actual toggle-switch is set to width: 40px. So, use the calc() function to find the value. */
 .toggle-input:checked ~ .toggle-switch {
-  transform: translateX(calc(100px - 40px));
+  transform: translateX(calc(var(--toggle-width) - var(--circle-size)));
 }
